@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
       if @new_contact.save
         redirect_to companies_path, :flash => { :success => "Answers posted. Good luck!" }
         @response = @answers.zip(@questions)
-        InterestMailer.student_initiated_email(@company, current_user, @response).deliver
+        # InterestMailer.student_initiated_email(@company, current_user, @response).deliver
       end
     end
 

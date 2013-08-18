@@ -111,11 +111,11 @@ class UsersController < ApplicationController
     @catcher = User.find(@interest.catcher_id)
     @pitcher = User.find(@interest.pitcher_id)
     if current_user.groupable_type == "Company"
-      InterestMailer.employer_initiated_email(@catcher, @pitcher).deliver
+      # InterestMailer.employer_initiated_email(@catcher, @pitcher).deliver
       @interest.email_sent_on = DateTime.now
       @interest.save
     else
-      InterestMailer.s2s_pending_connection(@catcher, @pitcher).deliver
+      # InterestMailer.s2s_pending_connection(@catcher, @pitcher).deliver
       @interest.email_sent_on = DateTime.now
       @interest.save
     end
@@ -127,7 +127,7 @@ class UsersController < ApplicationController
     @company_id = params[:company_contact][:company_id]
     redirect_to company_questions_path(@company_id)
   end
-  
+
   private
   def find_votable
     params.each do |name, value|
