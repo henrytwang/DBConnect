@@ -453,14 +453,12 @@ float: right;
 }
 
 .company-card {
-  /*margin: 0 auto;*/
-  /*width:500px;*/
   text-align: center;
-  margin-top: 15px;
+  padding-top: 30px;
 }
+
 .company-card #name{
   font-size: 45px;
-  /*width:100%;*/
 }
 
 .company-card .edit{
