@@ -22,7 +22,6 @@
   </div>
 </div>
 
-
 <div class="connect-button">
 <% if current_user.interests.select{|interest| interest.id == user.id }.empty? %>
     <% if user.id != current_user.id %>
