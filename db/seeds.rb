@@ -5,7 +5,7 @@ Company.create(:activated => true,
                :location => ["Chicago", "San Francisco", "New York", "Austin"].sample,
                :status => "active")
 
-10.times do
+30.times do
 Company.create(:activated => true,
                :website => Faker::Internet.url,
                :name => Faker::Company.name,
@@ -49,8 +49,8 @@ User.create(:activated => true,
               :twitter_url => "www.twitter.com/student")
 
 
-#Create 10 active students
-10.times do
+#Create 50 active students
+50.times do
   User.create(:groupable_id => rand(1..3),
               :groupable_type => "Cohort",
               :company_name => Faker::Company.name,
@@ -67,8 +67,8 @@ User.create(:activated => true,
               :status => "active")
 end
 
-# Create 10 active employers
-10.times do
+# Create 20 active employers
+30.times do
   User.create(:groupable_id => rand(1..11),
               :groupable_type => "Company",
               :email => Faker::Internet.email,

@@ -41,7 +41,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
-  # gem 'sunspot_solr'
+  gem 'sunspot_solr'
 end
 
 group :test do
@@ -64,7 +64,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'debugger'
 
 gem 'best_in_place'
-# gem 'sunspot_rails'
+gem 'sunspot_rails'
 gem 'thin'
 gem 'faker'
 
