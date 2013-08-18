@@ -4,9 +4,9 @@ class CompaniesController < ApplicationController
 
   def create
     company = Company.create(:website => params[:companies][:website],
-                   :name => params[:companies][:name],
-                   :location => params[:companies][:location],
-                   :initial_email_contact => params[:companies][:initial_email_contact])
+                             :name => params[:companies][:name],
+                             :location => params[:companies][:location],
+                             :initial_email_contact => params[:companies][:initial_email_contact])
     flash[:success] = "Company request form sent. We'll be in touch."
     redirect_to :back
   end
@@ -35,8 +35,8 @@ class CompaniesController < ApplicationController
   def edit
     @company = Company.find(params[:id])
     if @company.id == current_user.groupable.id
-    @logo = @company.logo.url
-    @no_contacts = current_user.company_contacts.select{|contact| contact.company_id == @company.id }.empty?
+      @logo = @company.logo.url
+      @no_contacts = current_user.company_contacts.select{|contact| contact.company_id == @company.id }.empty?
     unless @no_contacts
       @contacted_on = current_user.company_contacts.where(:company_id => @company.id).first.created_at
     end
@@ -49,9 +49,9 @@ class CompaniesController < ApplicationController
   def update
      @company = Company.find(params[:id])
      @company.update_attributes(:website => params[:company][:website],
-                   :name => params[:company][:name],
-                   :location => params[:company][:location],
-                   :initial_email_contact => params[:company][:initial_email_contact])
+                                :name => params[:company][:name],
+                                :location => params[:company][:location],
+                                :initial_email_contact => params[:company][:initial_email_contact])
      @company.logo = params[:company][:file]
      @company.save!
      redirect_to :back

@@ -20,10 +20,10 @@
 <div class="connect-button">
   <% if @no_contacts %>
     <%= form_for :company_contact , :url => connect_employers_path, :method => 'post' do |f| %>
-        <%= f.hidden_field :company_id, :value => @company.id %>
-        <% if current_user.groupable_type == 'Cohort' %>
-          <button class="connect_button">Connect<% f.submit %></button>
-        <% end %>
+      <%= f.hidden_field :company_id, :value => @company.id %>
+      <% if current_user.groupable_type == 'Cohort' %>
+        <button class="connect_button">Connect<% f.submit %></button>
+      <% end %>
     <% end %>
   <% else %>
 <%= @contacted_on.strftime("You two connected on %m/%d/%Y. #{user.email}") %>

@@ -215,7 +215,7 @@ end
 5.times do
   Question.create(:user_id => 44,
                   :company_id => 1,
-                  :text => "#{Faker::Lorem.sentence}?")
+                  :text => "#{Faker::Lorem.sentence.chop!}?")
 end
 
 # Create 5 answers for a student (id = 9)

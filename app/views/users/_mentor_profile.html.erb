@@ -4,7 +4,7 @@
   <p><%= user.location %></p>
   <p><%= gravatar_image_tag user.email %></p>
   <% if current_user.id == @user.id %>
-      <p><%= link_to "Edit my profile", edit_user_path(current_user) %></p>
+    <p><%= link_to "Edit my profile", edit_user_path(current_user) %></p>
   <% end %>
   </div>
 
@@ -24,25 +24,25 @@
 
 <div class="connect-button">
 <% if current_user.interests.select{|interest| interest.id == user.id }.empty? %>
-    <% if user.id != current_user.id %>
-      <%= form_for @interest , :url => connect_students_path, :method => 'post' do |f| %>
-        <%= f.hidden_field :pitcher_id, :value => current_user.id %>
-        <%= f.hidden_field :catcher_id, :value => user.id %>
-        <% if current_user.groupable_type == 'Cohort' %>
-          <button class="connect_button">Connect<% f.submit %></button>
-        <% elsif current_user.groupable_type == 'Company'  %>
-          <button class="lettuce-intro">Let us introduce you<% f.submit %></button>
-        <% end %>
+  <% if user.id != current_user.id %>
+    <%= form_for @interest , :url => connect_students_path, :method => 'post' do |f| %>
+      <%= f.hidden_field :pitcher_id, :value => current_user.id %>
+      <%= f.hidden_field :catcher_id, :value => user.id %>
+      <% if current_user.groupable_type == 'Cohort' %>
+        <button class="connect_button">Connect<% f.submit %></button>
+      <% elsif current_user.groupable_type == 'Company'  %>
+        <button class="lettuce-intro">Let us introduce you<% f.submit %></button>
       <% end %>
     <% end %>
-    <% else %>
-      <% if pitcher_interest %>
-        <%= pitcher_interest.created_at.strftime("You two connected on %m/%d/%Y. #{user.email}") %>
-      <% end %>
-      <% if catcher_interest %>
-        <%= catcher_interest.created_at.strftime("You two connected on %m/%d/%Y. #{user.email}") %>
-      <% end %>
-  <%end%>
+  <% end %>
+  <% else %>
+    <% if pitcher_interest %>
+      <%= pitcher_interest.created_at.strftime("You two connected on %m/%d/%Y. #{user.email}") %>
+    <% end %>
+    <% if catcher_interest %>
+      <%= catcher_interest.created_at.strftime("You two connected on %m/%d/%Y. #{user.email}") %>
+    <% end %>
+  <% end %>
 </div>
 
 <% if current_user.id == user.id %>
@@ -51,7 +51,7 @@
     <ul>
     <% current_user.interests.each do |interest| %>
       <li><%= link_to "#{interest.first_name} #{interest.last_name}", user_path(interest.id) %>  <%=interest.created_at.strftime("Connected on %m/%d/%Y")%></li>
-    <%end%>
+    <% end %>
 </ul>
   </div>
 <% end %>

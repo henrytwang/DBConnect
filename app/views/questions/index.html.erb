@@ -4,7 +4,7 @@
 <% end %>
 
 <% if @answers.length > 0 %>
-
+  <div class="question-answer-title">Please answer these questions first</div>
   <%= form_for :answers, :url => answers_path do |f| %>
     <% @answers.each do |answer| %>
       <div class="question-answer">
@@ -12,16 +12,16 @@
       <% if answer.question.status == "active"%>
         <%= answer.question.text %>
       <% end %>
-      <% if @works_at_company == true && answer.question.status == "active" %>  
+      <% if @works_at_company == true && answer.question.status == "active" %>
         <%= button_to "Delete", company_question_path(params[:company_id], answer.question.id), :method => :put %>
       <% end %>
-    
+
       <br><br>
       <% if answer.question.status == "active"%>
         <% unless current_user.groupable_type == "Company" %>
           <%= fields_for "answer[]" do |answer| %>
             <%= answer.text_field :text, :rows => 10%>
-            <%= answer.hidden_field :question_id %> 
+            <%= answer.hidden_field :question_id %>
             <br><br>
           <% end %>
         <% end %>
@@ -34,6 +34,6 @@
       <% end %>
     </div>
   <% end %>
-  
+
 <% end %>
 </div>

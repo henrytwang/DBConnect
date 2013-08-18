@@ -2,18 +2,18 @@
 <div class="companies-index">
   <div class="filter-columns">
     <div class="user-filtered">
-    <ul class="user_list">
-      <% @companies.each do |company| %>
-        <li id="<%=company.id%>" data-location="<%= company.location %>" data-status="<%= company.status %>">
-          <div class="user-div">
-            <%= image_tag("default.png", :width => 35 ) %>
-            <div class="user-div-text">
-              <%= link_to "#{company.name}", company_path(company.id) %>
+      <ul class="user_list">
+        <% @companies.each do |company| %>
+          <li id="<%=company.id%>" data-location="<%= company.location %>" data-status="<%= company.status %>">
+            <div class="user-div">
+              <%= image_tag("default.png", :width => 35 ) %>
+              <div class="user-div-text">
+                <%= link_to "#{company.name}", company_path(company.id) %>
+              </div>
             </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+          </li>
+        <% end %>
+      </ul>
     </div>
     <div class="location-filters">
       <h3>Locations</h3>
