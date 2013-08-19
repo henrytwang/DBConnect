@@ -4,8 +4,4 @@ class Company < ActiveRecord::Base
   has_many :users, :as => :groupable
   has_many :questions
 
-  searchable do
-    text :name, :location
-  end
-
 end
