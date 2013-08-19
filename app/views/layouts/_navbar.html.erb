@@ -6,8 +6,8 @@
       <% if current_user %>
         <%= image_tag "search-icon.png", :size => "20x20", :class => "search_icon" %>
         <%= form_tag results_path, method: :get, class: "nav-search" do  %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search by name or location" %>
-      <% end %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search by name or company" %>
+        <% end %>
       <ul class="nav_choices">
         <%= link_to companies_path do %>
         <li>Companies Hiring</li>

@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  searchable do
+    text :first_name, :last_name, :location
+  end
+
   def find_homepage(group)
     case group
     when "Cohort"

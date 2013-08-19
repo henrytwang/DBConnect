@@ -19,11 +19,7 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .project
-/solr
-/solr/data
 /config/api_keys.txt
-/solr/pids/*
-/solr/pids/development/sunspot-solr-development.pid
 /public/uploads/*
 /app/.DS_Store
 /app/assets/.DS_Store
