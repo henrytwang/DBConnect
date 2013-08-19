@@ -354,8 +354,10 @@ float: right;
 }
 
 .search_results {
+  width: 300px;
+  margin: 0 auto;
   margin-top: 50px;
-  margin-left: 100px;
+  text-align: center;
 }
 
 .user-div {
