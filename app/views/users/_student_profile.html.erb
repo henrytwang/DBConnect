@@ -30,10 +30,10 @@
     </tr>
     <% if @current_top_5 %>
       <% @current_top_5.each do |repo| %>
-    <tr>
-      <td data-url=<%=repo.url %> data-name=<%=repo.name%>><%= link_to "#{repo.name}", repo.url %></td>
-     </tr>
-     <% end %>
+      <tr>
+        <td data-url=<%= repo.url %> data-name=<%= repo.name %>><%= link_to "#{repo.name}", repo.url %></td>
+      </tr>
+      <% end %>
      <% end %>
   </table>
   <% if user == current_user %>
@@ -61,10 +61,10 @@
 		<% end %>
 		<% else %>
 			<% if pitcher_interest %>
-				<%= pitcher_interest.created_at.strftime("You two connected on %m/%d/%Y. (#{user.email})") %>
+				<%= pitcher_interest.created_at.strftime("You two connected on %m/%d/%Y") %>
 			<% end %>
 			<% if catcher_interest %>
-				<%= catcher_interest.created_at.strftime("You two connected on %m/%d/%Y. (#{user.email})") %>
+				<%= catcher_interest.created_at.strftime("You two connected on %m/%d/%Y") %>
 			<% end %>
 	<%end%>
 </div>

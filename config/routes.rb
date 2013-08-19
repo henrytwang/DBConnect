@@ -25,6 +25,7 @@ Alumni::Application.routes.draw do
 
   get   "log_out"            => "sessions#destroy"
   get   "log_in"             => "sessions#new"
+  get   "demo_login"         => "sessions#demo_login"
   get   "sign_up"            => "users#new"
   get   "thank_you"          => "users#thankyou"
   get   "admin"              => "admins#index"

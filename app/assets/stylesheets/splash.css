@@ -57,11 +57,51 @@
 }
 
 .splash_giant_button:hover {
-    background: #ff6551;
-    -webkit-box-shadow: 0px 0px 0px 4px #ffbfab;
-    -moz-box-shadow: 0px 0px 0px 4px #ffbfab;
-    box-shadow: 0px 0px 0px 4px #ffbfab;
-    border-color: #ed5e4b;
+  background: #ff6551;
+  -webkit-box-shadow: 0px 0px 0px 4px #ffbfab;
+  -moz-box-shadow: 0px 0px 0px 4px #ffbfab;
+  box-shadow: 0px 0px 0px 4px #ffbfab;
+  border-color: #ed5e4b;
+}
+
+.splash_small_button {
+  display: inline-block;
+  background: #AAA;
+  -webkit-box-shadow: 0px 1px 0px 0px #AAA inset, 0px 0px 0px 4px #e6e6e6;
+  -moz-box-shadow: 0px 1px 0px 0px #AAA inset, 0px 0px 0px 4px #e6e6e6;
+  box-shadow: 0px 1px 0px 0px #AAA inset, 0px 0px 0px 4px #e6e6e6;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: all 0s 0;
+  -moz-transition: all 0s 0;
+  -o-transition: all 0s 0;
+  transition: all 0s 0;
+  text-shadow: 0px 1px 1px #AAA;
+  padding: 8px 24px;
+  border-color: #AAA;
+  border-width: 1px;
+  border-style: solid;
+  font-family: 'AvenirNext';
+  font-size: 20px;
+  color: #ffffff !important;
+  font-weight: bold;
+  width: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top:50px;
+}
+
+.main-buttons {
+  margin-top: 50px;
+}
+
+.main-buttons a {
+  width: 160px;
+  margin:0 auto;
+  margin-bottom: 20px;
 }
 
 .splash_users {

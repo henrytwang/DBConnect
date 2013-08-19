@@ -13,7 +13,7 @@
         <li>Companies Hiring</li>
         <% end %>
         <%= link_to users_path(:student => "student") do %>
-        <li>For Hire</li>
+        <li>Students</li>
         <% end %>
         <% unless current_user.groupable_type == "Company"%>
           <%= link_to users_path(:mentor => "mentor") do %>

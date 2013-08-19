@@ -1,8 +1,9 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.where(:company_id => params[:company_id]) 
-    if @questions != nil
+    @questions = Question.where(:company_id => params[:company_id])
+    @company = Company.find(params[:company_id])
+    if @questions
       @answers = []
       @questions.each do |q|
          @answers << q.answers.build
@@ -19,7 +20,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answer = Answer.new 
+    @answer = Answer.new
     @answers = @question.answers
   end
 

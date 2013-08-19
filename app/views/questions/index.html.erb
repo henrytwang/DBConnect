@@ -4,7 +4,7 @@
 <% end %>
 
 <% if @answers.length > 0 %>
-  <div class="question-answer-title">Please answer these questions first</div>
+  <div class="question-answer-title"><%= @company.name %> would like to know:</div>
   <%= form_for :answers, :url => answers_path do |f| %>
     <% @answers.each do |answer| %>
       <div class="question-answer">

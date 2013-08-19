@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     @user = current_user
   end
 
-
   def create
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
@@ -34,4 +33,10 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to '/'
   end
+
+  def demo_login
+    session[:user_id] = 125
+    redirect_to "/users?alumni=alumni"
+  end
+
 end

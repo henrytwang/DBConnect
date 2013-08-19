@@ -1,9 +1,4 @@
 # Create a company
-Company.create(:activated => true,
-               :website => Faker::Internet.url,
-               :name => Faker::Company.name,
-               :location => ["Chicago", "San Francisco", "New York", "Austin"].sample,
-               :status => "active")
 
 30.times do
 Company.create(:activated => true,
@@ -211,11 +206,13 @@ end
 end
 
 
-# Create 5 questions for an employer (id = 44)
-5.times do
-  Question.create(:user_id => 44,
-                  :company_id => 1,
-                  :text => "#{Faker::Lorem.sentence.chop!}?")
+# Create 5 questions for an employer
+30.times do |company_id|
+  5.times do
+    Question.create(:user_id => 44,
+                    :company_id => company_id + 1,
+                    :text => "#{Faker::Lorem.sentence.chop!}?")
+  end
 end
 
 # Create 5 answers for a student (id = 9)
@@ -224,3 +221,24 @@ end
                 :question_id => index + 1,
                 :text => Faker::Lorem.sentence)
 end
+
+#default student 3
+User.create(  :activated => true,
+              :company_name => "Independent",
+              :email => "henry.t.wang@gmail.com",
+              :facebook_url => "www.facebook.com/henry.wang",
+              :first_name => "Henry",
+              :github_handle => "henrytwang",
+              :graduation_date => "2013",
+              :groupable_id => 1,
+              :groupable_type => "Cohort",
+              :intro => "Never put off for tomorrow, what you can do today. -Thomas Jefferson",
+              :last_login => DateTime.new(2013,rand(1..12),rand(1..27)),
+              :last_name => "Wang",
+              :linkedin_url => "www.linkedin.com/in/henrytwang",
+              :location => "San Francisco",
+              :password => "password",
+              :phone => "815.757.5397",
+              :status => "active",
+              :tumblr_url => "henwang.tumblr.com",
+              :twitter_url => "www.twitter.com/henrytwang")

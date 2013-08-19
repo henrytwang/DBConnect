@@ -60,7 +60,7 @@ function overlay(whichSignup) {
    'left' : '35%',
    'width' : '500px',
    'height' : '500px',
-   'border-radius' : '200px',
+   'border-radius' : '2000px',
    'z-index' : 4999
  }).hide().show(('slow','fade'));
 
